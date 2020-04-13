@@ -1,0 +1,170 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset0 Liberation Sans{\*\falt Arial};}{\f5\fmodern\fprq1\fcharset0 Liberation Mono{\*\falt Courier New};}{\f6\fnil\fprq2\fcharset0 Noto Sans CJK SC;}{\f7\fmodern\fprq1\fcharset0 Noto Sans Mono CJK SC;}{\f8\fnil\fprq0\fcharset128 Lohit Devanagari;}{\f9\fnil\fprq2\fcharset0 Lohit Devanagari;}}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet{\s0\snext0\hich\af3\dbch\af10\langfe2052\dbch\af9\afs24\alang1081\nowidctlpar\hyphpar0\ltrpar\cf0\loch\f3\fs24\lang1033 Normal;}
+{\s15\sbasedon0\snext16\dbch\af6\dbch\af9\afs28\sb240\sa120\keepn\loch\f4\fs28 Heading;}
+{\s16\sbasedon0\snext16\sl276\slmult1\sb0\sa140 Text Body;}
+{\s17\sbasedon16\snext17\dbch\af8\sl276\slmult1\sb0\sa140 List;}
+{\s18\sbasedon0\snext18\dbch\af8\afs24\ai\sb120\sa120\noline\fs24\i Caption;}
+{\s19\sbasedon0\snext19\dbch\af8\noline Index;}
+{\s20\sbasedon0\snext20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20 Preformatted Text;}
+}{\*\generator LibreOffice/6.3.4.2$Linux_X86_64 LibreOffice_project/30$Build-2}{\info{\creatim\yr0\mo0\dy0\hr0\min0}{\revtim\yr2020\mo4\dy12\hr22\min33}{\printim\yr0\mo0\dy0\hr0\min0}}{\*\userprops}\deftab709
+\viewscale110
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse451\pgwsxn12240\pghsxn15840\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\pgdscnxt0 Default Style;}}
+\formshade\paperh15840\paperw12240\margl1134\margr1134\margt1134\margb1134\sectd\sbknone\sectunlocked1\pgndec\pgwsxn12240\pghsxn15840\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+{\*\ftnsep\chftnsep}\pgndec\pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+#################### HOW TO INSTALL ON YOUR SERVER}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+(this was created Tue Mar 24 2020 and was tested on apache and using mariadb for the mysql)}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+################# making the mysql user and database}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+mysql -u root -p -h localhost}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+create database yourdatabasename;}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+CREATE USER 'yourusername'@'localhost' IDENTIFIED BY 'yourpassword';}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+GRANT ALL PRIVILEGES ON yourdatabasename.* TO 'yourusername'@'localhost';}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+################# now copy this to make the MYSQL tables so the primitive login system works (see screenshot picture 1.png for details)}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{
+ }{\loch
+CREATE TABLE users (}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{
+        }{\loch
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{
+        }{\loch
+username VARCHAR(50) NOT NULL UNIQUE,}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{
+        }{\loch
+password VARCHAR(255) NOT NULL,}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{
+        }{\loch
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{
+    }{\loch
+); }
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+################# (entering the MYSQL tables threw command line if phpmyadmin is not installed, the 'source /whateveryourfilepathis/run.sql;' run.sql is code above just saved in file form )}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+USE yourdatabasename;}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+source /whateveryourfilepathis/run.sql;}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+SHOW COLUMNS FROM users;}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+quit;}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+################# LINES THAT NEED TO BE CHANGED TO YOUR HOSTING'S FILE PATH IN CREATE.PHP}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+line 53:}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+$pathpath = "/var/www/html/sites/$filename.html";}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+line 215:}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+$filenamez = "/var/www/html/profile/$PAGE.html";}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+line 387:}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+$ret = file_put_contents("/var/www/html/profile/$PAGE.html", $hell2, FILE_APPEND | LOCK_EX);}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+line 616:}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+$ret = file_put_contents("/var/www/html/sites/$filename.html", $hell, FILE_APPEND | LOCK_EX);}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+line 627:}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+$file = "/var/www/html/index.html";}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+line 638:}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+$file = "/var/www/html/profile/$PAGE.html";}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+search and replace "/var/www/html" for whatever the file path of your servers folder is like prehaps "/home/username/public_html/" or "/home/vol4_1/byethost15.com/b15_232493238/htdocs/}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+################}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+in config.php  you must fill the database name and password to match your server }
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+define('DB_SERVER', 'localhost');}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+define('DB_USERNAME', 'yourusername');}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+define('DB_PASSWORD', 'yourpassword');}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+define('DB_NAME', 'yourdatabasename');}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+#################}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar\loch
+
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+OTHER:}
+\par \pard\plain \s20\dbch\af7\dbch\af5\afs20\sb0\sa0\loch\f5\fs20\ql\sb0\sa0\ltrpar{\loch
+-the .htaccess file is included which has the redirect for the wildcards, although the exact process of setting up wildcard domain depends on the nature of your hosting }
+\par }
