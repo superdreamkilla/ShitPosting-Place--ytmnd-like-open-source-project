@@ -1,1 +1,1 @@
-You will need to set up a wildcard on your server to get domainofmeme.YOURWEBSITE.com , if you don't have a wildcard it will behave like YOURWEBSITE.com/domainofmeme.html
+You will need to set up a wildcard on your server to get domainofmeme.YOURWEBSITE.com , if you don't have a wildcard it will behave like YOURWEBSITE.com/sites/domainofmeme.html
